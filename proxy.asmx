@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="proxy.asmx.cs" Class="ps.ads.proxy.ProxyService" %>

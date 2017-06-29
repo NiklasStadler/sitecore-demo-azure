@@ -1,0 +1,34 @@
+﻿.sc-border[data-sc-id="EmailPreviewSelectedVariantsBorder"],
+.sc-border[data-sc-id="SpamCheckSelectedVariantsBorder"] {
+  margin-top: 15px;
+}
+.sc-border[data-sc-id="SendQuickTestVariantsTextBorder"],
+.sc-border[data-sc-id="EmailPreviewVariantsTextBorder"],
+.sc-border[data-sc-id="SpamCheckVariantsTextBorder"] {
+  margin-bottom: 15px;
+}
+div[data-sc-id="EmailPreviewReportListControl"] .sc-listcontrol-body table tr td,
+div[data-sc-id="SpamCheckReportListControl"] .sc-listcontrol-body table tr td {
+  cursor: pointer;
+}
+div[data-sc-id="EmailPreviewVariantsColumn"],
+div[data-sc-id="SpamCheckVariantsColumn"] {
+  border-right: solid 1px #cccccc;
+}
+div[data-sc-id="SendQuickTestTextColumn"],
+div[data-sc-id="SendQuickTestTextBoxColumn"] {
+  padding-left: 0;
+}
+div[data-sc-id="SendQuickTestVariantsPresenter"] {
+  margin-top: 10px;
+}
+span.sc-text[data-sc-id="TestIdText"],
+span.sc-text[data-sc-id="TestIdValue"] {
+  float: left;
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+span.sc-text[data-sc-id="TestIdText"] {
+  font-weight: bold;
+}

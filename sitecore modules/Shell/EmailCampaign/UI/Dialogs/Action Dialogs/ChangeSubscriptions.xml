@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <EmailCampaign.ChangeSubscriptions>
+
+    <FormDialog ID="Dialog"
+                Icon="People/32x32/users_into.png"
+                Header="Change Recipient List Subscriptions"
+                Text="Select the recipients lists that the visitor should be subscribed to those that the visitor should be opted out of.">
+
+      <CodeBeside Type="Sitecore.Modules.EmailCampaign.UI.Dialogs.ActionDialogs.ChangeSubscriptions,Sitecore.EmailCampaign.Cm.UI"/>
+      <Stylesheet runat="server" Src="/sitecore modules/shell/EmailCampaign/UI/Dialogs/Action Dialogs/ChangeSubscriptions.css" Placeholder="Stylesheets" />
+
+      <script type="text/javascript">
+        document.observe("dom:loaded", function () {
+        try
+        {
+        if (Prototype.Browser.IE){
+        window.dialogWidth = "535px";
+        window.dialogHeight = "570px";
+        }
+        else {
+        window.resizeTo(555, 650);
+        }
+        }
+        catch(e)
+        {
+        alert(e);
+        }
+        })
+      </script>
+
+      <GridPanel Columns="2" Cellspacing="2" Class="MainGridPanel">
+        <Border Class="MainGridPanelBorder">
+          <Label Header="Recipient Lists:" Class="MainGridPanelLabel" />
+          <Scrollbox Class="ContactListScrollbox" >
+            <FilterableTreeView ID="TargetAudiencesTree" ChildrenOnly="true" Expanded="true" AllowMultiSelect="true"/>
+          </Scrollbox>
+        </Border>
+
+        <GridPanel Columns="2" Cellspacing="2" Class="ContactListsGrid">
+          <Literal />
+          <Label Header="Subscribe To:" Class="ContactListScrollboxLabel" />
+
+          <Border GridPanel.VAlign="Top" Class="ContactListSelectedBorder">
+            <Border Click="SubscribeIn_Click">
+              <Image Src='${Sitecore.Resources.Images.GetThemedImageSource("Core/16x16/arrow_blue_right.png", ImageDimension.id16x16)}' Class="ContactListSelectionButton" Alt="" />
+            </Border>
+            <Space Height="4"/>
+            <Border Click="SubscribeOut_Click">
+              <Image Src='${Sitecore.Resources.Images.GetThemedImageSource("Core/16x16/arrow_blue_left.png", ImageDimension.id16x16)}' Class="ContactListSelectionButton" Alt="" />
+            </Border>
+          </Border>
+
+          <Scrollbox Class="ContactListScrollboxSelected">
+            <Listview ID="SubscribeTo" Class="ContactListSelectedListView" View="Details" MultiSelect="true" DblClick="SubscribeOut_Click" />
+          </Scrollbox>
+
+          <Literal />
+          <Label Header="Opt-out Of:" Class="ContactListScrollboxLabel" />
+
+          <Border GridPanel.VAlign="Top" Class="ContactListSelectedBorder">
+            <Border Click="OptOutIn_Click">
+              <Image Src='${Sitecore.Resources.Images.GetThemedImageSource("Core/16x16/arrow_blue_right.png", ImageDimension.id16x16)}' Alt="" Class="ContactListSelectionButton"/>
+            </Border>
+            <Space Height="4"/>
+            <Border Click="OptOutOut_Click">
+              <Image Src='${Sitecore.Resources.Images.GetThemedImageSource("Core/16x16/arrow_blue_left.png", ImageDimension.id16x16)}' Alt="" Class="ContactListSelectionButton" />
+            </Border>
+          </Border>
+
+          <Scrollbox Class="ContactListScrollboxSelected">
+            <Listview ID="OptOutOf" Class="ContactListSelectedListView" View="Details" MultiSelect="true" DblClick="OptOutOut_Click" />
+          </Scrollbox>
+        </GridPanel>
+      </GridPanel>
+
+      <Space Height="20" />
+
+      <Border>
+
+        <Label Header="Manager root:" />
+
+        <Combobox ID="ManagerRootId" Header="Manager root" />
+      </Border>
+
+      <Space Height="10" />
+
+      <Border>
+        <Checkbox ID="SendConfirmationMail" Header="Send confirmation mail"/>
+      </Border>
+
+    </FormDialog>
+
+  </EmailCampaign.ChangeSubscriptions>
+</control>

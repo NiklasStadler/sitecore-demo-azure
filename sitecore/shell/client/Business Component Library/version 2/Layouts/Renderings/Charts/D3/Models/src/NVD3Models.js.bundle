@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>false</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory>../</outputDirectory>
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/BaseNVD3Objects.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Colors.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Tooltip.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/UtilsConfig.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Utils.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/FormatterConfig.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Formatter.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Dispatcher.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Data.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/Constants.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/ChartProperties.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/NVD3Legend.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/NVD3Tooltip.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/FunctionLines.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/NVD3Axis.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/Charts/D3/Models/src/NVD3VisualizationManager.js</file>
+  </files>
+</bundle>

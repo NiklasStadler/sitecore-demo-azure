@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Project (Books)>
+<!ATTLIST Project
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	RequestSender CDATA #REQUIRED
+	Units CDATA #IMPLIED
+>
+<!ELEMENT Books (Book)*>
+<!ELEMENT Book (Documents)>
+<!ATTLIST Book
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	CreateBook CDATA #IMPLIED
+	UpdateBook CDATA #IMPLIED
+	BookFilename CDATA #IMPLIED
+	PDFFilename CDATA #IMPLIED
+	ExportPDF CDATA #IMPLIED
+	ExportSWF CDATA #IMPLIED
+	SWFFilename CDATA #IMPLIED
+	PDFExportSetting CDATA #IMPLIED
+	Repaginate CDATA #IMPLIED
+	PrintBook CDATA #IMPLIED
+	PrintPreset CDATA #IMPLIED
+	PageOrder CDATA #IMPLIED
+	BlankPage CDATA #IMPLIED
+	AutoUpdate CDATA #IMPLIED
+	UseHighRes CDATA #IMPLIED
+	ConvertVars CDATA #IMPLIED
+	PageCurl CDATA #IMPLIED
+	SpineGradient CDATA #IMPLIED
+	ShowCornerTease CDATA #IMPLIED
+	EdgePercentage CDATA #IMPLIED
+	CurveQuality CDATA #IMPLIED
+	MediaHandling CDATA #IMPLIED
+	FrameRate CDATA #IMPLIED
+	GenerateHTML CDATA #IMPLIED
+	TranspBack CDATA #IMPLIED
+	IncludePreloader CDATA #IMPLIED
+	JpegQuality CDATA #IMPLIED
+	Compression CDATA #IMPLIED
+	Resolution CDATA #IMPLIED
+	Spreads CDATA #IMPLIED
+	Threshold CDATA #IMPLIED
+	ResamplingType CDATA #IMPLIED
+	Sizing CDATA #IMPLIED
+	FitToValue CDATA #IMPLIED
+	Width CDATA #IMPLIED
+	Height CDATA #IMPLIED
+	TextExport CDATA #IMPLIED
+	Transparency CDATA #IMPLIED
+	UseNetwork CDATA #IMPLIED
+	ViewAfterExport CDATA #IMPLIED
+>
+<!ELEMENT Documents (Document)*>
+<!ELEMENT Document (Preferences? | Colors? | Styles? | Layers? | Variables? | Pages? | Flows?)*>
+<!ATTLIST Document
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	Type CDATA #REQUIRED
+	PageWidth CDATA #IMPLIED
+	PageHeight CDATA #IMPLIED
+	Bleed CDATA #IMPLIED
+	MasterFilename CDATA #REQUIRED
+	DocFilename CDATA #REQUIRED
+	InsertFile CDATA #IMPLIED
+	SaveAs CDATA #IMPLIED
+	PageCount CDATA #IMPLIED
+	ScriptFilename CDATA #IMPLIED
+	Shuffle CDATA #IMPLIED
+	WaterMark CDATA #IMPLIED
+	MarkText CDATA #IMPLIED
+	MarkFontSize CDATA #IMPLIED
+	MarkFontColor CDATA #IMPLIED
+>
+<!ELEMENT Preferences EMPTY>
+<!ATTLIST Preferences
+	SuperScriptPos CDATA #IMPLIED
+	SuperScriptSize CDATA #IMPLIED
+	SubScriptPos CDATA #IMPLIED
+	SubScriptSize CDATA #IMPLIED
+>
+<!ELEMENT Styles (ParagraphStyles | CharacterStyles | TableStyles | CellStyles)*>
+<!ELEMENT ParagraphStyles (Style)*>
+<!ELEMENT ParagraphStyle (#PCDATA | CharacterStyle | SpecialCharacter | Inline | InsertVar | Table | Format)*>
+<!ATTLIST ParagraphStyle
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	Style CDATA #REQUIRED
+	Tag CDATA #IMPLIED
+>
+<!ELEMENT CharacterStyles (Style)*>
+<!ELEMENT CharacterStyle (#PCDATA | SpecialCharacter | Inline | InsertVar | Table | Format)*>
+<!ATTLIST CharacterStyle
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	Style CDATA #REQUIRED
+	Tag CDATA #IMPLIED
+>
+<!ELEMENT TableStyles (Style)*>
+<!ELEMENT CellStyles (Style)*>
+<!ELEMENT Style (FontFamily? | FontSize? | FontStyle? | FontColor? | Position? | LetterSpacing? | LineHeight? | 
+LeftIndent? | RightIndent? | HorizontalAlignment? | Bullets? | Case? | BulletAlignment? | NumberAlignment? | Underline? | Strikethrough? | 
+BorderColor? | BorderGapColor? | BorderGapOverprint? | BorderGapTint? | BorderOverprint? | BorderTint? | BorderType? | BorderWeight? | Clipping? | 
+DiagnolColor? | DiagnolGapColor? | DiagnolGapOverprint? | DiagnolGapTint? | DiagnolLine? | DiagnolOverprint? | DiagnolsOnTop? | DiagnolStrokeType? | DiagnolTint? | DiagnolWeight? | 
+FillColor? | FillTint? | FillOverprint? | FirstBaselineMin? | FirstBaselineOffset? | InsetBottom? | InsetLeft? | InsetRight? | InsetTop? | 
+SpaceAfter? | SpaceBefore? | StrokeColor? | StrokeGapColor? | StrokeGapOverprint? | StrokeGapTint? | StrokeOverprint? | StrokeTint? | StrokeType? | StrokeWeight? | 
+TextRotation? | VerticalJustification? | VJSpacingLimit? | Tabs? | CharacterColor? | Hyphenation? | Justification? | Kerning? | Tracking? | 
+Ligatures? | NoBreak? | HorizontalScale? | VerticalScale? | BaselineShift? | SkewAngle? | Language? | FirstLineIndent? | LastLineIndent? | BalanceLines? | 
+RowStrokes? | ColumnStrokes? | Fills? | RuleAbove? | RuleBelow? | Keep? )*>
+<!ATTLIST Style
+	Stylename CDATA #REQUIRED
+>
+<!ELEMENT FontFamily (#PCDATA)>
+<!ELEMENT FontStyle (#PCDATA)>
+<!ELEMENT FontSize (#PCDATA)>
+<!ELEMENT FontColor (#PCDATA)>
+<!ELEMENT Position (#PCDATA)>
+<!ELEMENT LetterSpacing (#PCDATA)>
+<!ELEMENT LineHeight (#PCDATA)>
+<!ELEMENT LeftIndent (#PCDATA)>
+<!ELEMENT RightIndent (#PCDATA)>
+<!ELEMENT HorizontalAlignment (#PCDATA)>
+<!ELEMENT Bullets (#PCDATA)>
+<!ATTLIST Bullets
+	BulletChar CDATA #REQUIRED
+	TextAfter CDATA #IMPLIED
+	CharStyle CDATA #REQUIRED
+	Number CDATA #IMPLIED
+	ContinueFromPrevious CDATA #IMPLIED
+	StartAt CDATA #IMPLIED
+>
+<!ELEMENT Underline (#PCDATA)>
+<!ATTLIST Underline
+	Weight CDATA #REQUIRED
+	Type CDATA #REQUIRED
+	Offset CDATA #REQUIRED
+	Color CDATA #REQUIRED
+	Tint CDATA #REQUIRED
+	StrokeOverprint CDATA #REQUIRED
+	GapColor CDATA #REQUIRED
+	GapTint CDATA #REQUIRED
+	GapOverprint CDATA #REQUIRED
+>
+<!ELEMENT Strikethrough (#PCDATA)>
+<!ATTLIST Strikethrough
+	Weight CDATA #REQUIRED
+	Type CDATA #REQUIRED
+	Offset CDATA #REQUIRED
+	Color CDATA #REQUIRED
+	Tint CDATA #REQUIRED
+	StrokeOverprint CDATA #REQUIRED
+	GapColor CDATA #REQUIRED
+	GapTint CDATA #REQUIRED
+	GapOverprint CDATA #REQUIRED
+>
+<!ELEMENT Case (#PCDATA)>
+<!ELEMENT BulletAlignment (#PCDATA)>
+<!ELEMENT NumberAlignment (#PCDATA)>
+<!ELEMENT BorderWeight (#PCDATA)>
+<!ELEMENT BorderColor (#PCDATA)>
+<!ELEMENT BorderType (#PCDATA)>
+<!ELEMENT BorderTint (#PCDATA)>
+<!ELEMENT BorderOverprint (#PCDATA)>
+<!ELEMENT BorderGapColor (#PCDATA)>
+<!ELEMENT BorderGapTint (#PCDATA)>
+<!ELEMENT BorderGapOverprint (#PCDATA)>
+<!ELEMENT InsetTop (#PCDATA)>
+<!ELEMENT InsetLeft (#PCDATA)>
+<!ELEMENT InsetRight (#PCDATA)>
+<!ELEMENT InsetBottom (#PCDATA)>
+<!ELEMENT VerticalJustification (#PCDATA)>
+<!ELEMENT VJSpacingLimit (#PCDATA)>
+<!ELEMENT FirstBaselineOffset (#PCDATA)>
+<!ELEMENT FirstBaselineMin (#PCDATA)>
+<!ELEMENT Clipping (#PCDATA)>
+<!ELEMENT TextRotation (#PCDATA)>
+<!ELEMENT SpaceAfter (#PCDATA)>
+<!ELEMENT SpaceBefore (#PCDATA)>
+<!ELEMENT StrokeWeight (#PCDATA)>
+<!ATTLIST StrokeWeight
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeType (#PCDATA)>
+<!ATTLIST StrokeType
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeColor (#PCDATA)>
+<!ATTLIST StrokeColor
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeTint (#PCDATA)>
+<!ATTLIST StrokeTint
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeOverprint (#PCDATA)>
+<!ATTLIST StrokeOverprint
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeGapColor (#PCDATA)>
+<!ATTLIST StrokeGapColor
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeGapTint (#PCDATA)>
+<!ATTLIST StrokeGapTint
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT StrokeGapOverprint (#PCDATA)>
+<!ATTLIST StrokeGapOverprint
+	Left CDATA #REQUIRED
+	Top CDATA #REQUIRED
+	Right CDATA #REQUIRED
+	Bottom CDATA #REQUIRED
+>
+<!ELEMENT FillColor (#PCDATA)>
+<!ELEMENT FillTint (#PCDATA)>
+<!ELEMENT FillOverprint (#PCDATA)>
+<!ELEMENT DiagnolLine (#PCDATA)>
+<!ELEMENT DiagnolWeight (#PCDATA)>
+<!ELEMENT DiagnolStrokeType (#PCDATA)>
+<!ELEMENT DiagnolColor (#PCDATA)>
+<!ELEMENT DiagnolTint (#PCDATA)>
+<!ELEMENT DiagnolOverprint (#PCDATA)>
+<!ELEMENT DiagnolGapColor (#PCDATA)>
+<!ELEMENT DiagnolGapTint (#PCDATA)>
+<!ELEMENT DiagnolGapOverprint (#PCDATA)>
+<!ELEMENT DiagnolsOnTop (#PCDATA)>
+<!ELEMENT Tracking (#PCDATA)>
+<!ELEMENT Kerning (#PCDATA)>
+<!ELEMENT Ligatures (#PCDATA)>
+<!ELEMENT NoBreak (#PCDATA)>
+<!ELEMENT HorizontalScale (#PCDATA)>
+<!ELEMENT VerticalScale (#PCDATA)>
+<!ELEMENT BaselineShift (#PCDATA)>
+<!ELEMENT SkewAngle (#PCDATA)>
+<!ELEMENT Language (#PCDATA)>
+<!ELEMENT FirstLineIndent (#PCDATA)>
+<!ELEMENT LastLineIndent (#PCDATA)>
+<!ELEMENT BalanceLines (#PCDATA)>
+<!ELEMENT Tabs (Tab)*>
+<!ELEMENT Tab (Leader?)>
+<!ATTLIST Tab
+	LeaderCount CDATA #REQUIRED
+	Alignment CDATA #REQUIRED
+	AlignToChar CDATA #REQUIRED
+	Position CDATA #REQUIRED
+>
+<!ELEMENT Leader EMPTY>
+<!ATTLIST Leader
+	CharValue CDATA #REQUIRED
+>
+<!ELEMENT CharacterColor EMPTY>
+<!ATTLIST CharacterColor
+	FillOverprint CDATA #REQUIRED
+	FillTint CDATA #REQUIRED
+	StrokeColor CDATA #REQUIRED
+	StrokeOverprint CDATA #REQUIRED
+	StrokeTint CDATA #REQUIRED
+	StrokeWeight CDATA #REQUIRED
+>
+<!ELEMENT Hyphenation EMPTY>
+<!ATTLIST Hyphenation
+	Capitalized CDATA #REQUIRED
+	Ladder CDATA #REQUIRED
+	LastWord CDATA #REQUIRED
+	Limit CDATA #REQUIRED
+	Zone CDATA #REQUIRED
+	CrossColumn CDATA #REQUIRED
+	AfterFirst CDATA #REQUIRED
+	BeforeLast CDATA #REQUIRED
+	ShortestWord CDATA #REQUIRED
+	Mode CDATA #REQUIRED
+>
+<!ELEMENT Justification EMPTY>
+<!ATTLIST Justification
+	WordspaceMin CDATA #REQUIRED
+	WordspaceMax CDATA #REQUIRED
+	WordspaceDes CDATA #REQUIRED
+	GlyphscaleMin CDATA #REQUIRED
+	GlyphscaleMax CDATA #REQUIRED
+	GlyphscaleDes CDATA #REQUIRED
+	LetterspaceMin CDATA #REQUIRED
+	LetterspaceMax CDATA #REQUIRED
+	LetterspaceDes CDATA #REQUIRED
+	AutoLeading CDATA #REQUIRED
+	SingleWordJustification CDATA #REQUIRED
+>
+<!ELEMENT RowStrokes EMPTY>
+<!ATTLIST RowStrokes
+	FirstCount CDATA #REQUIRED
+	FirstWeight CDATA #REQUIRED
+	FirstType CDATA #REQUIRED
+	FirstColor CDATA #REQUIRED
+	FirstTint CDATA #REQUIRED
+	FirstOverprint CDATA #REQUIRED
+	FirstGapColor CDATA #REQUIRED
+	FirstGapTint CDATA #REQUIRED
+	FirstGapOverprint CDATA #REQUIRED
+	NextCount CDATA #REQUIRED
+	NextWeight CDATA #REQUIRED
+	NextType CDATA #REQUIRED
+	NextColor CDATA #REQUIRED
+	NextTint CDATA #REQUIRED
+	NextOverprint CDATA #REQUIRED
+	NextGapColor CDATA #REQUIRED
+	NextGapTint CDATA #REQUIRED
+	NextGapOverprint CDATA #REQUIRED
+	SkipFirst CDATA #REQUIRED
+	SkipLast CDATA #REQUIRED
+>
+<!ELEMENT ColumnStrokes EMPTY>
+<!ATTLIST ColumnStrokes
+	FirstCount CDATA #REQUIRED
+	FirstWeight CDATA #REQUIRED
+	FirstType CDATA #REQUIRED
+	FirstColor CDATA #REQUIRED
+	FirstTint CDATA #REQUIRED
+	FirstOverprint CDATA #REQUIRED
+	FirstGapColor CDATA #REQUIRED
+	FirstGapTint CDATA #REQUIRED
+	FirstGapOverprint CDATA #REQUIRED
+	NextCount CDATA #REQUIRED
+	NextWeight CDATA #REQUIRED
+	NextType CDATA #REQUIRED
+	NextColor CDATA #REQUIRED
+	NextTint CDATA #REQUIRED
+	NextOverprint CDATA #REQUIRED
+	NextGapColor CDATA #REQUIRED
+	NextGapTint CDATA #REQUIRED
+	NextGapOverprint CDATA #REQUIRED
+	SkipFirst CDATA #REQUIRED
+	SkipLast CDATA #REQUIRED
+>
+<!ELEMENT Fills EMPTY>
+<!ATTLIST Fills
+	Pattern CDATA #REQUIRED
+	FirstCount CDATA #REQUIRED
+	FirstColor CDATA #REQUIRED
+	FirstTint CDATA #REQUIRED
+	FirstOverprint CDATA #REQUIRED
+	NextCount CDATA #REQUIRED
+	NextColor CDATA #REQUIRED
+	NextTint CDATA #REQUIRED
+	NextOverprint CDATA #REQUIRED
+	SkipFirst CDATA #REQUIRED
+	SkipLast CDATA #REQUIRED
+>
+<!ELEMENT RuleAbove EMPTY>
+<!ATTLIST RuleAbove
+	RuleOn CDATA #REQUIRED
+	StrokeWeight CDATA #REQUIRED
+	StrokeType CDATA #REQUIRED
+	StrokeColor CDATA #REQUIRED
+	StrokeTint CDATA #REQUIRED
+	StrokeOverprint CDATA #REQUIRED
+	GapColor CDATA #REQUIRED
+	GapTint CDATA #REQUIRED
+	GapOverprint CDATA #REQUIRED
+	Width CDATA #REQUIRED
+	Offset CDATA #REQUIRED
+	LeftIndent CDATA #REQUIRED
+	RightIndent CDATA #REQUIRED
+	KeepInFrame CDATA #REQUIRED
+>
+<!ELEMENT RuleBelow EMPTY>
+<!ATTLIST RuleBelow
+	RuleOn CDATA #REQUIRED
+	StrokeWeight CDATA #REQUIRED
+	StrokeType CDATA #REQUIRED
+	StrokeColor CDATA #REQUIRED
+	StrokeTint CDATA #REQUIRED
+	StrokeOverprint CDATA #REQUIRED
+	GapColor CDATA #REQUIRED
+	GapTint CDATA #REQUIRED
+	GapOverprint CDATA #REQUIRED
+	Width CDATA #REQUIRED
+	Offset CDATA #REQUIRED
+	LeftIndent CDATA #REQUIRED
+	RightIndent CDATA #REQUIRED
+>
+<!ELEMENT Keep EMPTY>
+<!ATTLIST Keep
+	StartParagraph CDATA #REQUIRED
+	WithNext CDATA #REQUIRED
+	Together CDATA #REQUIRED
+	KeepAllLines CDATA #REQUIRED
+	LastLines CDATA #REQUIRED
+	FirstLines CDATA #REQUIRED
+>
+<!ELEMENT SpecialCharacter EMPTY>
+<!ATTLIST SpecialCharacter
+	Type (3 | 7 | 8 | 9 | 10 | 24 | 25 | 160 | 173 | 8212 | 8211 | 8209 | 8193 | 8194 | 8195 | 8199 | 8200 | 8201 | 8202 | 1396927554) #IMPLIED
+>
+<!ELEMENT Colors (Swatch)*>
+<!ELEMENT Swatch (Mode, ((Red, Green, Blue) | (Cyan, Magenta, Yellow, Key)))>
+<!ATTLIST Swatch
+	Name CDATA #REQUIRED
+>
+<!ELEMENT Mode (#PCDATA)>
+<!ELEMENT Red (#PCDATA)>
+<!ELEMENT Green (#PCDATA)>
+<!ELEMENT Blue (#PCDATA)>
+<!ELEMENT Cyan (#PCDATA)>
+<!ELEMENT Magenta (#PCDATA)>
+<!ELEMENT Yellow (#PCDATA)>
+<!ELEMENT Key (#PCDATA)>
+<!ELEMENT Layers (Layer)*>
+<!ELEMENT Layer (Name, Z-Index, Visible, Locked, Printable)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Z-Index (#PCDATA)>
+<!ELEMENT Visible (#PCDATA)>
+<!ELEMENT Locked (#PCDATA)>
+<!ELEMENT Printable (#PCDATA)>
+<!ELEMENT Variables (Variable)*>
+<!ELEMENT Variable (Find, Replace)>
+<!ELEMENT Find (#PCDATA)>
+<!ELEMENT Replace (#PCDATA)>
+<!ELEMENT Pages (Page | Flow)*>
+<!ELEMENT Page (TextFrame | ImageFrame | Ellipse | Rectangle | Line | Path | Polygon | StickyNote)*>
+<!ATTLIST Page
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	Number CDATA #REQUIRED
+	ContNr CDATA #IMPLIED
+	MasterPrefix CDATA #REQUIRED
+	MasterBase CDATA #REQUIRED
+	FlowMasterPrefix CDATA #IMPLIED
+	FlowMasterBase CDATA #IMPLIED
+	Transition CDATA #IMPLIED
+	Direction CDATA #IMPLIED
+	Speed CDATA #IMPLIED
+	HorizontalGuides CDATA #IMPLIED
+	VerticalGuides CDATA #IMPLIED
+	Margin CDATA #IMPLIED
+	Width CDATA #IMPLIED
+	Height CDATA #IMPLIED
+>
+<!ELEMENT Flows (Flow | Footnotes)*>
+<!ELEMENT Flow (TextFrame | ImageFrame | Ellipse | Rectangle | Line | Path | Polygon | StickyNote)*>
+<!ATTLIST Flow
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	Number CDATA #IMPLIED
+	ContNr CDATA #IMPLIED
+	MasterPrefix CDATA #REQUIRED
+	MasterBase CDATA #REQUIRED
+	FlowMasterPrefix CDATA #IMPLIED
+	FlowMasterBase CDATA #IMPLIED
+	Transition CDATA #IMPLIED
+	Direction CDATA #IMPLIED
+	Speed CDATA #IMPLIED
+	HorizontalGuides CDATA #IMPLIED
+	VerticalGuides CDATA #IMPLIED
+	Margin CDATA #IMPLIED
+	Width CDATA #IMPLIED
+	Height CDATA #IMPLIED
+>
+<!ELEMENT Grid (TextFrame | ImageFrame | Ellipse | Rectangle | Line | Path | Polygon)*>
+<!ATTLIST Grid
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+>
+<!ELEMENT Footnotes (Footnote)*>
+<!ELEMENT Footnote (ParagraphStyle)*>
+<!ATTLIST Footnote
+	Name CDATA #REQUIRED
+	AutoNumber CDATA #REQUIRED
+	Type CDATA #REQUIRED
+	Prefix CDATA #REQUIRED
+	Suffix CDATA #REQUIRED
+	Style CDATA #REQUIRED
+>
+<!ENTITY % WrapAndStrokeAttributes '
+	WMode CDATA #IMPLIED
+	WOffset CDATA #IMPLIED
+	WInvert CDATA #IMPLIED
+	WSide CDATA #IMPLIED
+	LCap CDATA #IMPLIED
+	JType CDATA #IMPLIED
+	MLim CDATA #IMPLIED
+	SAlign CDATA #IMPLIED
+	LStart CDATA #IMPLIED
+	LEnd CDATA #IMPLIED
+'>
+<!ENTITY % InteractiveAttributes '
+	HLink CDATA #IMPLIED
+	HLLinkTo CDATA #IMPLIED
+	Animation CDATA #IMPLIED
+	Duration CDATA #IMPLIED
+	HideA CDATA #IMPLIED
+	HideI CDATA #IMPLIED
+	NPlays CDATA #IMPLIED
+	OpKeyFr CDATA #IMPLIED  
+	Loop CDATA #IMPLIED
+	XKeyFr CDATA #IMPLIED
+	YKeyFr CDATA #IMPLIED
+	Speed CDATA #IMPLIED
+	Animate CDATA #IMPLIED
+	Events CDATA #IMPLIED
+	AniPath CDATA #IMPLIED
+'>
+<!ELEMENT TextFrame (ParagraphStyle)*>
+<!ATTLIST TextFrame
+	Width CDATA #REQUIRED
+	Height CDATA #REQUIRED
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+	Stroke CDATA #IMPLIED
+	StrokeThickness CDATA #IMPLIED
+	StrokeType CDATA #IMPLIED
+	Z-Index CDATA #REQUIRED
+	Background CDATA #IMPLIED
+	LayerName CDATA #REQUIRED
+	Rotation CDATA #IMPLIED
+	VerticalAlignment CDATA #IMPLIED
+	Opacity CDATA #IMPLIED
+	Transparency CDATA #IMPLIED
+	Name CDATA #IMPLIED
+	CornerRadius CDATA #IMPLIED
+	CornerType CDATA #IMPLIED
+	margin-left CDATA #IMPLIED
+	margin-top CDATA #IMPLIED
+	margin-right CDATA #IMPLIED
+	margin-bottom CDATA #IMPLIED
+	FlowName CDATA #IMPLIED
+	FlowOrder CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	SitecoreFieldname CDATA #IMPLIED
+	GroupID CDATA #IMPLIED
+	RenderingID CDATA #IMPLIED
+	ItemReferenceID CDATA #IMPLIED
+	ItemReferenceDisplayName CDATA #IMPLIED
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	NrOfColumns CDATA #IMPLIED
+	ColumnGutter CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	ParagraphStyle CDATA #IMPLIED
+	ScriptOverflow CDATA #IMPLIED
+	RunOnce CDATA #IMPLIED
+	RunScript CDATA #IMPLIED
+	FitFrame CDATA #IMPLIED
+	ShowOverflow CDATA #IMPLIED
+	FillTint CDATA #IMPLIED
+	StrokeTint CDATA #IMPLIED
+	BalCols CDATA #IMPLIED
+	WIgnore CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT ImageFrame (Image)>
+<!ATTLIST ImageFrame
+	Width CDATA #REQUIRED
+	Height CDATA #REQUIRED
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+	Stroke CDATA #IMPLIED
+	StrokeThickness CDATA #IMPLIED
+	StrokeType CDATA #IMPLIED
+	Z-Index CDATA #REQUIRED
+	Background CDATA #IMPLIED
+	LayerName CDATA #REQUIRED
+	Rotation CDATA #IMPLIED
+	VerticalAlignment CDATA #IMPLIED
+	Opacity CDATA #IMPLIED
+	Transparency CDATA #IMPLIED
+	Name CDATA #IMPLIED
+	CornerRadius CDATA #IMPLIED
+	CornerType CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	SitecoreFieldname CDATA #IMPLIED
+	GroupID CDATA #IMPLIED
+	RenderingID CDATA #IMPLIED
+	SitecoreMediaID CDATA #IMPLIED
+	ItemReferenceID CDATA #IMPLIED
+	ItemReferenceDisplayName CDATA #IMPLIED
+	CropAmount CDATA #IMPLIED
+	ReferencePoint CDATA #IMPLIED
+	Scaling CDATA #IMPLIED
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	RunScript CDATA #IMPLIED
+	FillTint CDATA #IMPLIED
+	StrokeTint CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT Image EMPTY>
+<!ATTLIST Image
+	Width CDATA #REQUIRED
+	Height CDATA #REQUIRED
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+	LowResSrc CDATA #REQUIRED
+	HighResSrc CDATA #REQUIRED
+	Name CDATA #IMPLIED
+	Rotation CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	SitecoreFieldname CDATA #IMPLIED
+	SitecoreMediaID CDATA #IMPLIED
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	WCont CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	RunScript CDATA #IMPLIED
+>
+<!ELEMENT Inline (Image | ParagraphStyle*)>
+<!ATTLIST Inline
+	Type CDATA #REQUIRED
+	ParagraphStyle CDATA #IMPLIED
+	Height CDATA #REQUIRED
+	Width CDATA #REQUIRED
+	Position CDATA #IMPLIED
+	YOffset CDATA #IMPLIED
+	XOffset CDATA #IMPLIED
+	Alignment CDATA #IMPLIED
+	SpaceBefore CDATA #IMPLIED
+	PreventManualPositioning CDATA #IMPLIED
+	RelativeToSpine CDATA #IMPLIED
+	AnchObjPtHor CDATA #IMPLIED
+	AnchObjPtVer CDATA #IMPLIED
+	AnchPosPtHor CDATA #IMPLIED
+	AnchPosPtVer CDATA #IMPLIED
+	XRelativeTo CDATA #IMPLIED
+	YRelativeTo CDATA #IMPLIED
+	BottomTopBoundries CDATA #IMPLIED
+	Opacity CDATA #IMPLIED
+	Transparency CDATA #IMPLIED
+	CornerRadius CDATA #IMPLIED
+	CornerType CDATA #IMPLIED
+	Name CDATA #IMPLIED
+	Stroke CDATA #IMPLIED
+	StrokeThickness CDATA #IMPLIED
+	StrokeType CDATA #IMPLIED
+	Rotation CDATA #IMPLIED
+	Background CDATA #IMPLIED
+	margin-left CDATA #IMPLIED
+	margin-top CDATA #IMPLIED
+	margin-right CDATA #IMPLIED
+	margin-bottom CDATA #IMPLIED
+	VerticalAlignment CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	SitecoreFieldname CDATA #IMPLIED
+	Scaling CDATA #IMPLIED
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	NrOfColumns CDATA #IMPLIED
+	ColumnGutter CDATA #IMPLIED
+	FitFrame CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	FillTint CDATA #IMPLIED
+	StrokeTint CDATA #IMPLIED
+	WIgnore CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	BalCols CDATA #IMPLIED
+>
+<!ELEMENT InsertVar EMPTY>
+<!ATTLIST InsertVar
+	Name CDATA #IMPLIED
+	Value CDATA #IMPLIED
+>
+<!ELEMENT Table (Row)*>
+<!ATTLIST Table
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	ColCount CDATA #REQUIRED
+	RowCount CDATA #IMPLIED
+	HeaderRows CDATA #IMPLIED
+	FooterRows CDATA #IMPLIED
+	TableStyle CDATA #REQUIRED
+	RepeatHeader CDATA #IMPLIED
+	RepeatFooter CDATA #IMPLIED
+>
+<!ELEMENT Row (Cell)*>
+<!ATTLIST Row
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	RowHeight CDATA #IMPLIED
+	RowMin CDATA #IMPLIED
+	RowMax CDATA #IMPLIED
+	StartRow CDATA #IMPLIED
+	KeepWithNext CDATA #IMPLIED
+>
+<!ELEMENT Cell (ParagraphStyle)*>
+<!ATTLIST Cell
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	CellStyle CDATA #IMPLIED
+	ColWidth CDATA #REQUIRED
+	HorStradle CDATA #IMPLIED
+	VerStradle CDATA #IMPLIED
+>
+<!ENTITY % ShapeAttributes '
+	Width CDATA #REQUIRED
+	Height CDATA #REQUIRED
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+	Stroke CDATA #IMPLIED
+	StrokeThickness CDATA #IMPLIED
+	StrokeType CDATA #IMPLIED
+	Z-Index CDATA #REQUIRED
+	Background CDATA #IMPLIED
+	LayerName CDATA #REQUIRED
+	Rotation CDATA #IMPLIED
+	Opacity CDATA #IMPLIED
+	Transparency CDATA #IMPLIED
+	Name CDATA #IMPLIED
+	CornerRadius CDATA #IMPLIED
+	CornerType CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	SitecoreFieldname CDATA #IMPLIED
+	GroupID CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	RunScript CDATA #IMPLIED
+	FillTint CDATA #IMPLIED
+	StrokeTint CDATA #IMPLIED
+'>
+<!ELEMENT Ellipse EMPTY>
+<!ATTLIST Ellipse 
+	%ShapeAttributes;
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT Rectangle EMPTY>
+<!ATTLIST Rectangle 
+	%ShapeAttributes;
+	HorizontalScale CDATA #IMPLIED
+	VerticalScale CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT Line (LinePoint)*>
+<!ATTLIST Line 
+	%ShapeAttributes;
+	Closed CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT Path (LinePoint)*>
+<!ATTLIST Path 
+	%ShapeAttributes;
+	Closed CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT Polygon (LinePoint)*>
+<!ATTLIST Polygon
+	%ShapeAttributes;
+	Closed CDATA #IMPLIED
+	%WrapAndStrokeAttributes;
+	%InteractiveAttributes;
+>
+<!ELEMENT LinePoint EMPTY>
+<!ATTLIST LinePoint
+	PointType CDATA #REQUIRED
+	AnchorPointX CDATA #IMPLIED
+	AnchorPointY CDATA #IMPLIED
+	LeftDirPointX CDATA #REQUIRED
+	LeftDirPointY CDATA #REQUIRED
+	RightDirPointX CDATA #IMPLIED
+	RightDirPointY CDATA #IMPLIED
+>
+<!ELEMENT StickyNote (ParagraphStyle)*>
+<!ATTLIST StickyNote
+	Width CDATA #REQUIRED
+	Height CDATA #REQUIRED
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+	Z-Index CDATA #REQUIRED
+	Background CDATA #IMPLIED
+	LayerName CDATA #REQUIRED
+	Rotation CDATA #IMPLIED
+	Name CDATA #IMPLIED
+	SitecoreID CDATA #IMPLIED
+	ObjectStyle CDATA #IMPLIED
+	GroupID CDATA #IMPLIED
+	%InteractiveAttributes;
+>
+<!ELEMENT Format (#PCDATA | SpecialCharacter | Inline | InsertVar | Table)*>
+<!ATTLIST Format
+	Bold CDATA #IMPLIED
+	Italic CDATA #IMPLIED
+	Underline CDATA #IMPLIED
+	SuperScript CDATA #IMPLIED
+	SubScript CDATA #IMPLIED
+	Track CDATA #IMPLIED
+	LSpacing CDATA #IMPLIED
+	Skew CDATA #IMPLIED
+	BLShift CDATA #IMPLIED
+	Leading CDATA #IMPLIED
+	HScale CDATA #IMPLIED
+	VScale CDATA #IMPLIED
+	Strike CDATA #IMPLIED
+	Font CDATA #IMPLIED
+	FontSize CDATA #IMPLIED
+	SCaps CDATA #IMPLIED
+	ACaps CDATA #IMPLIED
+>
+<!ELEMENT Data (#PCDATA)>

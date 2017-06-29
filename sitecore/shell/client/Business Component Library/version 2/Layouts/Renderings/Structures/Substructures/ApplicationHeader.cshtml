@@ -1,0 +1,20 @@
+﻿@using Sitecore.Mvc
+
+@model Sitecore.Speak.Components.Models.NotScriptCapabilityRenderingModel
+@{
+  Model.DataBind.IsVisible();
+}
+
+<div class="sc-applicationHeader-row1">
+  <div class="sc-applicationHeader-content">
+    <div class="sc-applicationHeader-title">
+      @Html.Sitecore().Placeholder("ApplicationHeader.Title")
+    </div>
+  </div>
+
+  <div class="sc-applicationHeader-content breadcrumb">
+    <div class="sc-applicationHeader-breadCrumb">
+      @Html.Sitecore().Placeholder("ApplicationHeader.BreadCrumb")
+    </div>
+  </div>
+</div>

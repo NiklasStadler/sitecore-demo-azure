@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>false</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory>../</outputDirectory>
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-Main.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-ViewModel.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-DetailList.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-TileList.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-IconList.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-ResizableColumns.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-TemplateHelper.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-ResponsiveColumns.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-DetailList-Header.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/ListControl-UserProfile.js</file>    
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-DetailList-HeightFactory.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-DetailList-Height-Row.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-DetailList-Height-Default.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-DetailList-Height-Inherited.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-TileList-HeightFactory.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-TileList-Height-Row.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-TileList-Height-Default.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-TileList-Height-Inherited.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-IconList-HeightFactory.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-IconList-Height-Row.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-IconList-Height-Default.js</file>
+    <file>/sitecore/shell/client/Business Component Library/version 2/Layouts/Renderings/ListsAndGrids/ListControls/src/Height/ListControl-IconList-Height-Inherited.js</file>
+  </files>
+</bundle>

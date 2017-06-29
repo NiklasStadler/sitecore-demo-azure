@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:complexType name="Project">
+		<xs:sequence>
+			<xs:element ref="Books"/>
+		</xs:sequence>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="RequestSender" use="required"/>
+		<xs:attribute name="Units"/>
+	</xs:complexType>
+	<xs:element name="Project" type="Project"/>
+	<xs:complexType name="Books">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Book"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Books" type="Books"/>
+	<xs:complexType name="Book">
+		<xs:sequence>
+			<xs:element ref="Documents"/>
+		</xs:sequence>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="CreateBook"/>
+		<xs:attribute name="UpdateBook"/>
+		<xs:attribute name="BookFilename"/>
+		<xs:attribute name="PDFFilename"/>
+		<xs:attribute name="ExportPDF"/>
+		<xs:attribute name="ExportSWF"/>
+		<xs:attribute name="SWFFilename"/>
+		<xs:attribute name="PDFExportSetting"/>
+		<xs:attribute name="Repaginate"/>
+		<xs:attribute name="PrintBook"/>
+		<xs:attribute name="PrintPreset"/>
+		<xs:attribute name="PageOrder"/>
+		<xs:attribute name="BlankPage"/>
+		<xs:attribute name="AutoUpdate"/>
+		<xs:attribute name="UseHighRes"/>
+		<xs:attribute name="ConvertVars"/>
+		<xs:attribute name="PageCurl"/>
+		<xs:attribute name="SpineGradient"/>
+		<xs:attribute name="ShowCornerTease"/>
+		<xs:attribute name="EdgePercentage"/>
+		<xs:attribute name="CurveQuality"/>
+		<xs:attribute name="MediaHandling"/>
+		<xs:attribute name="FrameRate"/>
+		<xs:attribute name="GenerateHTML"/>
+		<xs:attribute name="TranspBack"/>
+		<xs:attribute name="IncludePreloader"/>
+		<xs:attribute name="JpegQuality"/>
+		<xs:attribute name="Compression"/>
+		<xs:attribute name="Resolution"/>
+		<xs:attribute name="Spreads"/>
+		<xs:attribute name="Threshold"/>
+		<xs:attribute name="ResamplingType"/>
+		<xs:attribute name="Sizing"/>
+		<xs:attribute name="FitToValue"/>
+		<xs:attribute name="Width"/>
+		<xs:attribute name="Height"/>
+		<xs:attribute name="TextExport"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="UseNetwork"/>
+		<xs:attribute name="ViewAfterExport"/>
+	</xs:complexType>
+	<xs:element name="Book" type="Book"/>
+	<xs:complexType name="Documents">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Document"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Documents" type="Documents"/>
+	<xs:complexType name="Document">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Preferences" minOccurs="0"/>
+			<xs:element ref="Colors" minOccurs="0"/>
+			<xs:element ref="Styles" minOccurs="0"/>
+			<xs:element ref="Layers" minOccurs="0"/>
+			<xs:element ref="Variables" minOccurs="0"/>
+			<xs:element ref="Pages" minOccurs="0"/>
+			<xs:element ref="Flows" minOccurs="0"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="Type" use="required"/>
+		<xs:attribute name="PageWidth"/>
+		<xs:attribute name="PageHeight"/>
+		<xs:attribute name="Bleed"/>
+		<xs:attribute name="MasterFilename" use="required"/>
+		<xs:attribute name="DocFilename" use="required"/>
+		<xs:attribute name="InsertFile"/>
+		<xs:attribute name="SaveAs"/>
+		<xs:attribute name="PageCount"/>
+		<xs:attribute name="ScriptFilename"/>
+		<xs:attribute name="Shuffle"/>
+		<xs:attribute name="WaterMark"/>
+		<xs:attribute name="MarkText"/>
+		<xs:attribute name="MarkFontSize"/>
+		<xs:attribute name="MarkFontColor"/>
+	</xs:complexType>
+	<xs:element name="Document" type="Document"/>
+	<xs:complexType name="Preferences">
+		<xs:attribute name="SuperScriptPos"/>
+		<xs:attribute name="SuperScriptSize"/>
+		<xs:attribute name="SubScriptPos"/>
+		<xs:attribute name="SubScriptSize"/>
+	</xs:complexType>
+	<xs:element name="Preferences" type="Preferences"/>
+	<xs:complexType name="Styles">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ParagraphStyles"/>
+			<xs:element ref="CharacterStyles"/>
+			<xs:element ref="TableStyles"/>
+			<xs:element ref="CellStyles"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Styles" type="Styles"/>
+	<xs:complexType name="ParagraphStyles">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Style"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ParagraphStyles" type="ParagraphStyles"/>
+	<xs:complexType name="ParagraphStyle" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="CharacterStyle"/>
+			<xs:element ref="SpecialCharacter"/>
+			<xs:element ref="Inline"/>
+			<xs:element ref="InsertVar"/>
+			<xs:element ref="Table"/>
+			<xs:element ref="Format"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="Style" use="required"/>
+		<xs:attribute name="Tag"/>
+	</xs:complexType>
+	<xs:element name="ParagraphStyle" type="ParagraphStyle"/>
+	<xs:complexType name="CharacterStyles">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Style"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CharacterStyles" type="CharacterStyles"/>
+	<xs:complexType name="CharacterStyle" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="SpecialCharacter"/>
+			<xs:element ref="Inline"/>
+			<xs:element ref="InsertVar"/>
+			<xs:element ref="Table"/>
+			<xs:element ref="Format"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="Style" use="required"/>
+		<xs:attribute name="Tag"/>
+	</xs:complexType>
+	<xs:element name="CharacterStyle" type="CharacterStyle"/>
+	<xs:complexType name="TableStyles">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Style"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TableStyles" type="TableStyles"/>
+	<xs:complexType name="CellStyles">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Style"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CellStyles" type="CellStyles"/>
+	<xs:complexType name="Style">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="FontFamily" minOccurs="0"/>
+			<xs:element ref="FontSize" minOccurs="0"/>
+			<xs:element ref="FontStyle" minOccurs="0"/>
+			<xs:element ref="FontColor" minOccurs="0"/>
+			<xs:element ref="Position" minOccurs="0"/>
+			<xs:element ref="LetterSpacing" minOccurs="0"/>
+			<xs:element ref="LineHeight" minOccurs="0"/>
+			<xs:element ref="LeftIndent" minOccurs="0"/>
+			<xs:element ref="RightIndent" minOccurs="0"/>
+			<xs:element ref="HorizontalAlignment" minOccurs="0"/>
+			<xs:element ref="Bullets" minOccurs="0"/>
+			<xs:element ref="Case" minOccurs="0"/>
+			<xs:element ref="BulletAlignment" minOccurs="0"/>
+			<xs:element ref="NumberAlignment" minOccurs="0"/>
+			<xs:element ref="Underline" minOccurs="0"/>
+			<xs:element ref="Strikethrough" minOccurs="0"/>
+			<xs:element ref="BorderColor" minOccurs="0"/>
+			<xs:element ref="BorderGapColor" minOccurs="0"/>
+			<xs:element ref="BorderGapOverprint" minOccurs="0"/>
+			<xs:element ref="BorderGapTint" minOccurs="0"/>
+			<xs:element ref="BorderOverprint" minOccurs="0"/>
+			<xs:element ref="BorderTint" minOccurs="0"/>
+			<xs:element ref="BorderType" minOccurs="0"/>
+			<xs:element ref="BorderWeight" minOccurs="0"/>
+			<xs:element ref="Clipping" minOccurs="0"/>
+			<xs:element ref="DiagnolColor" minOccurs="0"/>
+			<xs:element ref="DiagnolGapColor" minOccurs="0"/>
+			<xs:element ref="DiagnolGapOverprint" minOccurs="0"/>
+			<xs:element ref="DiagnolGapTint" minOccurs="0"/>
+			<xs:element ref="DiagnolLine" minOccurs="0"/>
+			<xs:element ref="DiagnolOverprint" minOccurs="0"/>
+			<xs:element ref="DiagnolsOnTop" minOccurs="0"/>
+			<xs:element ref="DiagnolStrokeType" minOccurs="0"/>
+			<xs:element ref="DiagnolTint" minOccurs="0"/>
+			<xs:element ref="DiagnolWeight" minOccurs="0"/>
+			<xs:element ref="FillColor" minOccurs="0"/>
+			<xs:element ref="FillTint" minOccurs="0"/>
+			<xs:element ref="FillOverprint" minOccurs="0"/>
+			<xs:element ref="FirstBaselineMin" minOccurs="0"/>
+			<xs:element ref="FirstBaselineOffset" minOccurs="0"/>
+			<xs:element ref="InsetBottom" minOccurs="0"/>
+			<xs:element ref="InsetLeft" minOccurs="0"/>
+			<xs:element ref="InsetRight" minOccurs="0"/>
+			<xs:element ref="InsetTop" minOccurs="0"/>
+			<xs:element ref="SpaceAfter" minOccurs="0"/>
+			<xs:element ref="SpaceBefore" minOccurs="0"/>
+			<xs:element ref="StrokeColor" minOccurs="0"/>
+			<xs:element ref="StrokeGapColor" minOccurs="0"/>
+			<xs:element ref="StrokeGapOverprint" minOccurs="0"/>
+			<xs:element ref="StrokeGapTint" minOccurs="0"/>
+			<xs:element ref="StrokeOverprint" minOccurs="0"/>
+			<xs:element ref="StrokeTint" minOccurs="0"/>
+			<xs:element ref="StrokeType" minOccurs="0"/>
+			<xs:element ref="StrokeWeight" minOccurs="0"/>
+			<xs:element ref="TextRotation" minOccurs="0"/>
+			<xs:element ref="VerticalJustification" minOccurs="0"/>
+			<xs:element ref="VJSpacingLimit" minOccurs="0"/>
+			<xs:element ref="Tabs" minOccurs="0"/>
+			<xs:element ref="CharacterColor" minOccurs="0"/>
+			<xs:element ref="Hyphenation" minOccurs="0"/>
+			<xs:element ref="Justification" minOccurs="0"/>
+			<xs:element ref="Kerning" minOccurs="0"/>
+			<xs:element ref="Tracking" minOccurs="0"/>
+			<xs:element ref="Ligatures" minOccurs="0"/>
+			<xs:element ref="NoBreak" minOccurs="0"/>
+			<xs:element ref="HorizontalScale" minOccurs="0"/>
+			<xs:element ref="VerticalScale" minOccurs="0"/>
+			<xs:element ref="BaselineShift" minOccurs="0"/>
+			<xs:element ref="SkewAngle" minOccurs="0"/>
+			<xs:element ref="Language" minOccurs="0"/>
+			<xs:element ref="FirstLineIndent" minOccurs="0"/>
+			<xs:element ref="LastLineIndent" minOccurs="0"/>
+			<xs:element ref="BalanceLines" minOccurs="0"/>
+			<xs:element ref="RowStrokes" minOccurs="0"/>
+			<xs:element ref="ColumnStrokes" minOccurs="0"/>
+			<xs:element ref="Fills" minOccurs="0"/>
+			<xs:element ref="RuleAbove" minOccurs="0"/>
+			<xs:element ref="RuleBelow" minOccurs="0"/>
+			<xs:element ref="Keep" minOccurs="0"/>
+		</xs:choice>
+		<xs:attribute name="Stylename" use="required"/>
+	</xs:complexType>
+	<xs:element name="Style" type="Style"/>
+	<xs:complexType name="FontFamily" mixed="true"/>
+	<xs:element name="FontFamily" type="FontFamily"/>
+	<xs:complexType name="FontStyle" mixed="true"/>
+	<xs:element name="FontStyle" type="FontStyle"/>
+	<xs:complexType name="FontSize" mixed="true"/>
+	<xs:element name="FontSize" type="FontSize"/>
+	<xs:complexType name="FontColor" mixed="true"/>
+	<xs:element name="FontColor" type="FontColor"/>
+	<xs:complexType name="Position" mixed="true"/>
+	<xs:element name="Position" type="Position"/>
+	<xs:complexType name="LetterSpacing" mixed="true"/>
+	<xs:element name="LetterSpacing" type="LetterSpacing"/>
+	<xs:complexType name="LineHeight" mixed="true"/>
+	<xs:element name="LineHeight" type="LineHeight"/>
+	<xs:complexType name="LeftIndent" mixed="true"/>
+	<xs:element name="LeftIndent" type="LeftIndent"/>
+	<xs:complexType name="RightIndent" mixed="true"/>
+	<xs:element name="RightIndent" type="RightIndent"/>
+	<xs:complexType name="HorizontalAlignment" mixed="true"/>
+	<xs:element name="HorizontalAlignment" type="HorizontalAlignment"/>
+	<xs:complexType name="Bullets" mixed="true">
+		<xs:attribute name="BulletChar" use="required"/>
+		<xs:attribute name="TextAfter"/>
+		<xs:attribute name="CharStyle" use="required"/>
+		<xs:attribute name="Number"/>
+		<xs:attribute name="ContinueFromPrevious"/>
+		<xs:attribute name="StartAt"/>
+	</xs:complexType>
+	<xs:element name="Bullets" type="Bullets"/>
+	<xs:complexType name="Underline" mixed="true">
+		<xs:attribute name="Weight" use="required"/>
+		<xs:attribute name="Type" use="required"/>
+		<xs:attribute name="Offset" use="required"/>
+		<xs:attribute name="Color" use="required"/>
+		<xs:attribute name="Tint" use="required"/>
+		<xs:attribute name="StrokeOverprint" use="required"/>
+		<xs:attribute name="GapColor" use="required"/>
+		<xs:attribute name="GapTint" use="required"/>
+		<xs:attribute name="GapOverprint" use="required"/>
+	</xs:complexType>
+	<xs:element name="Underline" type="Underline"/>
+	<xs:complexType name="Strikethrough" mixed="true">
+		<xs:attribute name="Weight" use="required"/>
+		<xs:attribute name="Type" use="required"/>
+		<xs:attribute name="Offset" use="required"/>
+		<xs:attribute name="Color" use="required"/>
+		<xs:attribute name="Tint" use="required"/>
+		<xs:attribute name="StrokeOverprint" use="required"/>
+		<xs:attribute name="GapColor" use="required"/>
+		<xs:attribute name="GapTint" use="required"/>
+		<xs:attribute name="GapOverprint" use="required"/>
+	</xs:complexType>
+	<xs:element name="Strikethrough" type="Strikethrough"/>
+	<xs:complexType name="Case" mixed="true"/>
+	<xs:element name="Case" type="Case"/>
+	<xs:complexType name="BulletAlignment" mixed="true"/>
+	<xs:element name="BulletAlignment" type="BulletAlignment"/>
+	<xs:complexType name="NumberAlignment" mixed="true"/>
+	<xs:element name="NumberAlignment" type="NumberAlignment"/>
+	<xs:complexType name="BorderWeight" mixed="true"/>
+	<xs:element name="BorderWeight" type="BorderWeight"/>
+	<xs:complexType name="BorderColor" mixed="true"/>
+	<xs:element name="BorderColor" type="BorderColor"/>
+	<xs:complexType name="BorderType" mixed="true"/>
+	<xs:element name="BorderType" type="BorderType"/>
+	<xs:complexType name="BorderTint" mixed="true"/>
+	<xs:element name="BorderTint" type="BorderTint"/>
+	<xs:complexType name="BorderOverprint" mixed="true"/>
+	<xs:element name="BorderOverprint" type="BorderOverprint"/>
+	<xs:complexType name="BorderGapColor" mixed="true"/>
+	<xs:element name="BorderGapColor" type="BorderGapColor"/>
+	<xs:complexType name="BorderGapTint" mixed="true"/>
+	<xs:element name="BorderGapTint" type="BorderGapTint"/>
+	<xs:complexType name="BorderGapOverprint" mixed="true"/>
+	<xs:element name="BorderGapOverprint" type="BorderGapOverprint"/>
+	<xs:complexType name="InsetTop" mixed="true"/>
+	<xs:element name="InsetTop" type="InsetTop"/>
+	<xs:complexType name="InsetLeft" mixed="true"/>
+	<xs:element name="InsetLeft" type="InsetLeft"/>
+	<xs:complexType name="InsetRight" mixed="true"/>
+	<xs:element name="InsetRight" type="InsetRight"/>
+	<xs:complexType name="InsetBottom" mixed="true"/>
+	<xs:element name="InsetBottom" type="InsetBottom"/>
+	<xs:complexType name="VerticalJustification" mixed="true"/>
+	<xs:element name="VerticalJustification" type="VerticalJustification"/>
+	<xs:complexType name="VJSpacingLimit" mixed="true"/>
+	<xs:element name="VJSpacingLimit" type="VJSpacingLimit"/>
+	<xs:complexType name="FirstBaselineOffset" mixed="true"/>
+	<xs:element name="FirstBaselineOffset" type="FirstBaselineOffset"/>
+	<xs:complexType name="FirstBaselineMin" mixed="true"/>
+	<xs:element name="FirstBaselineMin" type="FirstBaselineMin"/>
+	<xs:complexType name="Clipping" mixed="true"/>
+	<xs:element name="Clipping" type="Clipping"/>
+	<xs:complexType name="TextRotation" mixed="true"/>
+	<xs:element name="TextRotation" type="TextRotation"/>
+	<xs:complexType name="SpaceAfter" mixed="true"/>
+	<xs:element name="SpaceAfter" type="SpaceAfter"/>
+	<xs:complexType name="SpaceBefore" mixed="true"/>
+	<xs:element name="SpaceBefore" type="SpaceBefore"/>
+	<xs:complexType name="StrokeWeight" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeWeight" type="StrokeWeight"/>
+	<xs:complexType name="StrokeType" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeType" type="StrokeType"/>
+	<xs:complexType name="StrokeColor" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeColor" type="StrokeColor"/>
+	<xs:complexType name="StrokeTint" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeTint" type="StrokeTint"/>
+	<xs:complexType name="StrokeOverprint" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeOverprint" type="StrokeOverprint"/>
+	<xs:complexType name="StrokeGapColor" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeGapColor" type="StrokeGapColor"/>
+	<xs:complexType name="StrokeGapTint" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeGapTint" type="StrokeGapTint"/>
+	<xs:complexType name="StrokeGapOverprint" mixed="true">
+		<xs:attribute name="Left" use="required"/>
+		<xs:attribute name="Top" use="required"/>
+		<xs:attribute name="Right" use="required"/>
+		<xs:attribute name="Bottom" use="required"/>
+	</xs:complexType>
+	<xs:element name="StrokeGapOverprint" type="StrokeGapOverprint"/>
+	<xs:complexType name="FillColor" mixed="true"/>
+	<xs:element name="FillColor" type="FillColor"/>
+	<xs:complexType name="FillTint" mixed="true"/>
+	<xs:element name="FillTint" type="FillTint"/>
+	<xs:complexType name="FillOverprint" mixed="true"/>
+	<xs:element name="FillOverprint" type="FillOverprint"/>
+	<xs:complexType name="DiagnolLine" mixed="true"/>
+	<xs:element name="DiagnolLine" type="DiagnolLine"/>
+	<xs:complexType name="DiagnolWeight" mixed="true"/>
+	<xs:element name="DiagnolWeight" type="DiagnolWeight"/>
+	<xs:complexType name="DiagnolStrokeType" mixed="true"/>
+	<xs:element name="DiagnolStrokeType" type="DiagnolStrokeType"/>
+	<xs:complexType name="DiagnolColor" mixed="true"/>
+	<xs:element name="DiagnolColor" type="DiagnolColor"/>
+	<xs:complexType name="DiagnolTint" mixed="true"/>
+	<xs:element name="DiagnolTint" type="DiagnolTint"/>
+	<xs:complexType name="DiagnolOverprint" mixed="true"/>
+	<xs:element name="DiagnolOverprint" type="DiagnolOverprint"/>
+	<xs:complexType name="DiagnolGapColor" mixed="true"/>
+	<xs:element name="DiagnolGapColor" type="DiagnolGapColor"/>
+	<xs:complexType name="DiagnolGapTint" mixed="true"/>
+	<xs:element name="DiagnolGapTint" type="DiagnolGapTint"/>
+	<xs:complexType name="DiagnolGapOverprint" mixed="true"/>
+	<xs:element name="DiagnolGapOverprint" type="DiagnolGapOverprint"/>
+	<xs:complexType name="DiagnolsOnTop" mixed="true"/>
+	<xs:element name="DiagnolsOnTop" type="DiagnolsOnTop"/>
+	<xs:complexType name="Tracking" mixed="true"/>
+	<xs:element name="Tracking" type="Tracking"/>
+	<xs:complexType name="Kerning" mixed="true"/>
+	<xs:element name="Kerning" type="Kerning"/>
+	<xs:complexType name="Ligatures" mixed="true"/>
+	<xs:element name="Ligatures" type="Ligatures"/>
+	<xs:complexType name="NoBreak" mixed="true"/>
+	<xs:element name="NoBreak" type="NoBreak"/>
+	<xs:complexType name="HorizontalScale" mixed="true"/>
+	<xs:element name="HorizontalScale" type="HorizontalScale"/>
+	<xs:complexType name="VerticalScale" mixed="true"/>
+	<xs:element name="VerticalScale" type="VerticalScale"/>
+	<xs:complexType name="BaselineShift" mixed="true"/>
+	<xs:element name="BaselineShift" type="BaselineShift"/>
+	<xs:complexType name="SkewAngle" mixed="true"/>
+	<xs:element name="SkewAngle" type="SkewAngle"/>
+	<xs:complexType name="Language" mixed="true"/>
+	<xs:element name="Language" type="Language"/>
+	<xs:complexType name="FirstLineIndent" mixed="true"/>
+	<xs:element name="FirstLineIndent" type="FirstLineIndent"/>
+	<xs:complexType name="LastLineIndent" mixed="true"/>
+	<xs:element name="LastLineIndent" type="LastLineIndent"/>
+	<xs:complexType name="BalanceLines" mixed="true"/>
+	<xs:element name="BalanceLines" type="BalanceLines"/>
+	<xs:complexType name="Tabs">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Tab"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Tabs" type="Tabs"/>
+	<xs:complexType name="Tab">
+		<xs:sequence>
+			<xs:element ref="Leader" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="LeaderCount" use="required"/>
+		<xs:attribute name="Alignment" use="required"/>
+		<xs:attribute name="AlignToChar" use="required"/>
+		<xs:attribute name="Position" use="required"/>
+	</xs:complexType>
+	<xs:element name="Tab" type="Tab"/>
+	<xs:complexType name="Leader">
+		<xs:attribute name="CharValue" use="required"/>
+	</xs:complexType>
+	<xs:element name="Leader" type="Leader"/>
+	<xs:complexType name="CharacterColor">
+		<xs:attribute name="FillOverprint" use="required"/>
+		<xs:attribute name="FillTint" use="required"/>
+		<xs:attribute name="StrokeColor" use="required"/>
+		<xs:attribute name="StrokeOverprint" use="required"/>
+		<xs:attribute name="StrokeTint" use="required"/>
+		<xs:attribute name="StrokeWeight" use="required"/>
+	</xs:complexType>
+	<xs:element name="CharacterColor" type="CharacterColor"/>
+	<xs:complexType name="Hyphenation">
+		<xs:attribute name="Capitalized" use="required"/>
+		<xs:attribute name="Ladder" use="required"/>
+		<xs:attribute name="LastWord" use="required"/>
+		<xs:attribute name="Limit" use="required"/>
+		<xs:attribute name="Zone" use="required"/>
+		<xs:attribute name="CrossColumn" use="required"/>
+		<xs:attribute name="AfterFirst" use="required"/>
+		<xs:attribute name="BeforeLast" use="required"/>
+		<xs:attribute name="ShortestWord" use="required"/>
+		<xs:attribute name="Mode" use="required"/>
+	</xs:complexType>
+	<xs:element name="Hyphenation" type="Hyphenation"/>
+	<xs:complexType name="Justification">
+		<xs:attribute name="WordspaceMin" use="required"/>
+		<xs:attribute name="WordspaceMax" use="required"/>
+		<xs:attribute name="WordspaceDes" use="required"/>
+		<xs:attribute name="GlyphscaleMin" use="required"/>
+		<xs:attribute name="GlyphscaleMax" use="required"/>
+		<xs:attribute name="GlyphscaleDes" use="required"/>
+		<xs:attribute name="LetterspaceMin" use="required"/>
+		<xs:attribute name="LetterspaceMax" use="required"/>
+		<xs:attribute name="LetterspaceDes" use="required"/>
+		<xs:attribute name="AutoLeading" use="required"/>
+		<xs:attribute name="SingleWordJustification" use="required"/>
+	</xs:complexType>
+	<xs:element name="Justification" type="Justification"/>
+	<xs:complexType name="RowStrokes">
+		<xs:attribute name="FirstCount" use="required"/>
+		<xs:attribute name="FirstWeight" use="required"/>
+		<xs:attribute name="FirstType" use="required"/>
+		<xs:attribute name="FirstColor" use="required"/>
+		<xs:attribute name="FirstTint" use="required"/>
+		<xs:attribute name="FirstOverprint" use="required"/>
+		<xs:attribute name="FirstGapColor" use="required"/>
+		<xs:attribute name="FirstGapTint" use="required"/>
+		<xs:attribute name="FirstGapOverprint" use="required"/>
+		<xs:attribute name="NextCount" use="required"/>
+		<xs:attribute name="NextWeight" use="required"/>
+		<xs:attribute name="NextType" use="required"/>
+		<xs:attribute name="NextColor" use="required"/>
+		<xs:attribute name="NextTint" use="required"/>
+		<xs:attribute name="NextOverprint" use="required"/>
+		<xs:attribute name="NextGapColor" use="required"/>
+		<xs:attribute name="NextGapTint" use="required"/>
+		<xs:attribute name="NextGapOverprint" use="required"/>
+		<xs:attribute name="SkipFirst" use="required"/>
+		<xs:attribute name="SkipLast" use="required"/>
+	</xs:complexType>
+	<xs:element name="RowStrokes" type="RowStrokes"/>
+	<xs:complexType name="ColumnStrokes">
+		<xs:attribute name="FirstCount" use="required"/>
+		<xs:attribute name="FirstWeight" use="required"/>
+		<xs:attribute name="FirstType" use="required"/>
+		<xs:attribute name="FirstColor" use="required"/>
+		<xs:attribute name="FirstTint" use="required"/>
+		<xs:attribute name="FirstOverprint" use="required"/>
+		<xs:attribute name="FirstGapColor" use="required"/>
+		<xs:attribute name="FirstGapTint" use="required"/>
+		<xs:attribute name="FirstGapOverprint" use="required"/>
+		<xs:attribute name="NextCount" use="required"/>
+		<xs:attribute name="NextWeight" use="required"/>
+		<xs:attribute name="NextType" use="required"/>
+		<xs:attribute name="NextColor" use="required"/>
+		<xs:attribute name="NextTint" use="required"/>
+		<xs:attribute name="NextOverprint" use="required"/>
+		<xs:attribute name="NextGapColor" use="required"/>
+		<xs:attribute name="NextGapTint" use="required"/>
+		<xs:attribute name="NextGapOverprint" use="required"/>
+		<xs:attribute name="SkipFirst" use="required"/>
+		<xs:attribute name="SkipLast" use="required"/>
+	</xs:complexType>
+	<xs:element name="ColumnStrokes" type="ColumnStrokes"/>
+	<xs:complexType name="Fills">
+		<xs:attribute name="Pattern" use="required"/>
+		<xs:attribute name="FirstCount" use="required"/>
+		<xs:attribute name="FirstColor" use="required"/>
+		<xs:attribute name="FirstTint" use="required"/>
+		<xs:attribute name="FirstOverprint" use="required"/>
+		<xs:attribute name="NextCount" use="required"/>
+		<xs:attribute name="NextColor" use="required"/>
+		<xs:attribute name="NextTint" use="required"/>
+		<xs:attribute name="NextOverprint" use="required"/>
+		<xs:attribute name="SkipFirst" use="required"/>
+		<xs:attribute name="SkipLast" use="required"/>
+	</xs:complexType>
+	<xs:element name="Fills" type="Fills"/>
+	<xs:complexType name="RuleAbove">
+		<xs:attribute name="RuleOn" use="required"/>
+		<xs:attribute name="StrokeWeight" use="required"/>
+		<xs:attribute name="StrokeType" use="required"/>
+		<xs:attribute name="StrokeColor" use="required"/>
+		<xs:attribute name="StrokeTint" use="required"/>
+		<xs:attribute name="StrokeOverprint" use="required"/>
+		<xs:attribute name="GapColor" use="required"/>
+		<xs:attribute name="GapTint" use="required"/>
+		<xs:attribute name="GapOverprint" use="required"/>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Offset" use="required"/>
+		<xs:attribute name="LeftIndent" use="required"/>
+		<xs:attribute name="RightIndent" use="required"/>
+		<xs:attribute name="KeepInFrame" use="required"/>
+	</xs:complexType>
+	<xs:element name="RuleAbove" type="RuleAbove"/>
+	<xs:complexType name="RuleBelow">
+		<xs:attribute name="RuleOn" use="required"/>
+		<xs:attribute name="StrokeWeight" use="required"/>
+		<xs:attribute name="StrokeType" use="required"/>
+		<xs:attribute name="StrokeColor" use="required"/>
+		<xs:attribute name="StrokeTint" use="required"/>
+		<xs:attribute name="StrokeOverprint" use="required"/>
+		<xs:attribute name="GapColor" use="required"/>
+		<xs:attribute name="GapTint" use="required"/>
+		<xs:attribute name="GapOverprint" use="required"/>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Offset" use="required"/>
+		<xs:attribute name="LeftIndent" use="required"/>
+		<xs:attribute name="RightIndent" use="required"/>
+	</xs:complexType>
+	<xs:element name="RuleBelow" type="RuleBelow"/>
+	<xs:complexType name="Keep">
+		<xs:attribute name="StartParagraph" use="required"/>
+		<xs:attribute name="WithNext" use="required"/>
+		<xs:attribute name="Together" use="required"/>
+		<xs:attribute name="KeepAllLines" use="required"/>
+		<xs:attribute name="LastLines" use="required"/>
+		<xs:attribute name="FirstLines" use="required"/>
+	</xs:complexType>
+	<xs:element name="Keep" type="Keep"/>
+	<xs:complexType name="SpecialCharacter">
+		<xs:attribute name="Type">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="7"/>
+					<xs:enumeration value="8"/>
+					<xs:enumeration value="9"/>
+					<xs:enumeration value="10"/>
+					<xs:enumeration value="24"/>
+					<xs:enumeration value="25"/>
+					<xs:enumeration value="160"/>
+					<xs:enumeration value="173"/>
+					<xs:enumeration value="8193"/>
+					<xs:enumeration value="8194"/>
+					<xs:enumeration value="8195"/>
+					<xs:enumeration value="8199"/>
+					<xs:enumeration value="8200"/>
+					<xs:enumeration value="8201"/>
+					<xs:enumeration value="8202"/>
+					<xs:enumeration value="8209"/>
+					<xs:enumeration value="8211"/>
+					<xs:enumeration value="8212"/>
+					<xs:enumeration value="1396927554"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="SpecialCharacter" type="SpecialCharacter"/>
+	<xs:complexType name="Colors">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Swatch"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Colors" type="Colors"/>
+	<xs:complexType name="Swatch">
+		<xs:sequence>
+			<xs:element ref="Mode"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="Red"/>
+					<xs:element ref="Green"/>
+					<xs:element ref="Blue"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="Cyan"/>
+					<xs:element ref="Magenta"/>
+					<xs:element ref="Yellow"/>
+					<xs:element ref="Key"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="Name" use="required"/>
+	</xs:complexType>
+	<xs:element name="Swatch" type="Swatch"/>
+	<xs:complexType name="Mode" mixed="true"/>
+	<xs:element name="Mode" type="Mode"/>
+	<xs:complexType name="Red" mixed="true"/>
+	<xs:element name="Red" type="Red"/>
+	<xs:complexType name="Green" mixed="true"/>
+	<xs:element name="Green" type="Green"/>
+	<xs:complexType name="Blue" mixed="true"/>
+	<xs:element name="Blue" type="Blue"/>
+	<xs:complexType name="Cyan" mixed="true"/>
+	<xs:element name="Cyan" type="Cyan"/>
+	<xs:complexType name="Magenta" mixed="true"/>
+	<xs:element name="Magenta" type="Magenta"/>
+	<xs:complexType name="Yellow" mixed="true"/>
+	<xs:element name="Yellow" type="Yellow"/>
+	<xs:complexType name="Key" mixed="true"/>
+	<xs:element name="Key" type="Key"/>
+	<xs:complexType name="Layers">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Layer"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Layers" type="Layers"/>
+	<xs:complexType name="Layer">
+		<xs:sequence>
+			<xs:element ref="Name"/>
+			<xs:element ref="Z-Index"/>
+			<xs:element ref="Visible"/>
+			<xs:element ref="Locked"/>
+			<xs:element ref="Printable"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Layer" type="Layer"/>
+	<xs:complexType name="Name" mixed="true"/>
+	<xs:element name="Name" type="Name"/>
+	<xs:complexType name="Z-Index" mixed="true"/>
+	<xs:element name="Z-Index" type="Z-Index"/>
+	<xs:complexType name="Visible" mixed="true"/>
+	<xs:element name="Visible" type="Visible"/>
+	<xs:complexType name="Locked" mixed="true"/>
+	<xs:element name="Locked" type="Locked"/>
+	<xs:complexType name="Printable" mixed="true"/>
+	<xs:element name="Printable" type="Printable"/>
+	<xs:complexType name="Variables">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Variable"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Variables" type="Variables"/>
+	<xs:complexType name="Variable">
+		<xs:sequence>
+			<xs:element ref="Find"/>
+			<xs:element ref="Replace"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Variable" type="Variable"/>
+	<xs:complexType name="Find" mixed="true"/>
+	<xs:element name="Find" type="Find"/>
+	<xs:complexType name="Replace" mixed="true"/>
+	<xs:element name="Replace" type="Replace"/>
+	<xs:complexType name="Pages">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Page"/>
+			<xs:element ref="Flow"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Pages" type="Pages"/>
+	<xs:complexType name="Page">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="TextFrame"/>
+			<xs:element ref="ImageFrame"/>
+			<xs:element ref="Ellipse"/>
+			<xs:element ref="Rectangle"/>
+			<xs:element ref="Line"/>
+			<xs:element ref="Path"/>
+			<xs:element ref="Polygon"/>
+			<xs:element ref="StickyNote"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="Number" use="required"/>
+		<xs:attribute name="ContNr"/>
+		<xs:attribute name="MasterPrefix" use="required"/>
+		<xs:attribute name="MasterBase" use="required"/>
+		<xs:attribute name="FlowMasterPrefix"/>
+		<xs:attribute name="FlowMasterBase"/>
+		<xs:attribute name="Transition"/>
+		<xs:attribute name="Direction"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="HorizontalGuides"/>
+		<xs:attribute name="VerticalGuides"/>
+		<xs:attribute name="Margin"/>
+		<xs:attribute name="Width"/>
+		<xs:attribute name="Height"/>
+	</xs:complexType>
+	<xs:element name="Page" type="Page"/>
+	<xs:complexType name="Flows">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Flow"/>
+			<xs:element ref="Footnotes"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Flows" type="Flows"/>
+	<xs:complexType name="Flow">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="TextFrame"/>
+			<xs:element ref="ImageFrame"/>
+			<xs:element ref="Ellipse"/>
+			<xs:element ref="Rectangle"/>
+			<xs:element ref="Line"/>
+			<xs:element ref="Path"/>
+			<xs:element ref="Polygon"/>
+			<xs:element ref="StickyNote"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="Number"/>
+		<xs:attribute name="ContNr"/>
+		<xs:attribute name="MasterPrefix" use="required"/>
+		<xs:attribute name="MasterBase" use="required"/>
+		<xs:attribute name="FlowMasterPrefix"/>
+		<xs:attribute name="FlowMasterBase"/>
+		<xs:attribute name="Transition"/>
+		<xs:attribute name="Direction"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="HorizontalGuides"/>
+		<xs:attribute name="VerticalGuides"/>
+		<xs:attribute name="Margin"/>
+		<xs:attribute name="Width"/>
+		<xs:attribute name="Height"/>
+	</xs:complexType>
+	<xs:element name="Flow" type="Flow"/>
+	<xs:complexType name="Grid">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="TextFrame"/>
+			<xs:element ref="ImageFrame"/>
+			<xs:element ref="Ellipse"/>
+			<xs:element ref="Rectangle"/>
+			<xs:element ref="Line"/>
+			<xs:element ref="Path"/>
+			<xs:element ref="Polygon"/>
+		</xs:choice>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+	</xs:complexType>
+	<xs:element name="Grid" type="Grid"/>
+	<xs:complexType name="Footnotes">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Footnote"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Footnotes" type="Footnotes"/>
+	<xs:complexType name="Footnote">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ParagraphStyle"/>
+		</xs:sequence>
+		<xs:attribute name="Name" use="required"/>
+		<xs:attribute name="AutoNumber" use="required"/>
+		<xs:attribute name="Type" use="required"/>
+		<xs:attribute name="Prefix" use="required"/>
+		<xs:attribute name="Suffix" use="required"/>
+		<xs:attribute name="Style" use="required"/>
+	</xs:complexType>
+	<xs:element name="Footnote" type="Footnote"/>
+	<xs:complexType name="TextFrame">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ParagraphStyle"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="VerticalAlignment"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="margin-left"/>
+		<xs:attribute name="margin-top"/>
+		<xs:attribute name="margin-right"/>
+		<xs:attribute name="margin-bottom"/>
+		<xs:attribute name="FlowName"/>
+		<xs:attribute name="FlowOrder"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="RenderingID"/>
+		<xs:attribute name="ItemReferenceID"/>
+		<xs:attribute name="ItemReferenceDisplayName"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="NrOfColumns"/>
+		<xs:attribute name="ColumnGutter"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="ParagraphStyle"/>
+		<xs:attribute name="ScriptOverflow"/>
+		<xs:attribute name="RunOnce"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FitFrame"/>
+		<xs:attribute name="ShowOverflow"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="BalCols"/>
+		<xs:attribute name="WIgnore"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="TextFrame" type="TextFrame"/>
+	<xs:complexType name="ImageFrame">
+		<xs:sequence>
+			<xs:element ref="Image"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="VerticalAlignment"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="RenderingID"/>
+		<xs:attribute name="SitecoreMediaID"/>
+		<xs:attribute name="ItemReferenceID"/>
+		<xs:attribute name="ItemReferenceDisplayName"/>
+		<xs:attribute name="CropAmount"/>
+		<xs:attribute name="ReferencePoint"/>
+		<xs:attribute name="Scaling"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="ImageFrame" type="ImageFrame"/>
+	<xs:complexType name="Image">
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="LowResSrc" use="required"/>
+		<xs:attribute name="HighResSrc" use="required"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="SitecoreMediaID"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="WCont"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="RunScript"/>
+	</xs:complexType>
+	<xs:element name="Image" type="Image"/>
+	<xs:complexType name="Inline">
+		<xs:choice>
+			<xs:element ref="Image"/>
+			<xs:element ref="ParagraphStyle" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute name="Type" use="required"/>
+		<xs:attribute name="ParagraphStyle"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Position"/>
+		<xs:attribute name="YOffset"/>
+		<xs:attribute name="XOffset"/>
+		<xs:attribute name="Alignment"/>
+		<xs:attribute name="SpaceBefore"/>
+		<xs:attribute name="PreventManualPositioning"/>
+		<xs:attribute name="RelativeToSpine"/>
+		<xs:attribute name="AnchObjPtHor"/>
+		<xs:attribute name="AnchObjPtVer"/>
+		<xs:attribute name="AnchPosPtHor"/>
+		<xs:attribute name="AnchPosPtVer"/>
+		<xs:attribute name="XRelativeTo"/>
+		<xs:attribute name="YRelativeTo"/>
+		<xs:attribute name="BottomTopBoundries"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="margin-left"/>
+		<xs:attribute name="margin-top"/>
+		<xs:attribute name="margin-right"/>
+		<xs:attribute name="margin-bottom"/>
+		<xs:attribute name="VerticalAlignment"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="Scaling"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="NrOfColumns"/>
+		<xs:attribute name="ColumnGutter"/>
+		<xs:attribute name="FitFrame"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="WIgnore"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="BalCols"/>
+	</xs:complexType>
+	<xs:element name="Inline" type="Inline"/>
+	<xs:complexType name="InsertVar">
+		<xs:attribute name="Name"/>
+		<xs:attribute name="Value"/>
+	</xs:complexType>
+	<xs:element name="InsertVar" type="InsertVar"/>
+	<xs:complexType name="Table">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Row"/>
+		</xs:sequence>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="ColCount" use="required"/>
+		<xs:attribute name="RowCount"/>
+		<xs:attribute name="HeaderRows"/>
+		<xs:attribute name="FooterRows"/>
+		<xs:attribute name="TableStyle" use="required"/>
+		<xs:attribute name="RepeatHeader"/>
+		<xs:attribute name="RepeatFooter"/>
+	</xs:complexType>
+	<xs:element name="Table" type="Table"/>
+	<xs:complexType name="Row">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Cell"/>
+		</xs:sequence>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="RowHeight"/>
+		<xs:attribute name="RowMin"/>
+		<xs:attribute name="RowMax"/>
+		<xs:attribute name="StartRow"/>
+		<xs:attribute name="KeepWithNext"/>
+	</xs:complexType>
+	<xs:element name="Row" type="Row"/>
+	<xs:complexType name="Cell">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ParagraphStyle"/>
+		</xs:sequence>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="CellStyle"/>
+		<xs:attribute name="ColWidth" use="required"/>
+		<xs:attribute name="HorStradle"/>
+		<xs:attribute name="VerStradle"/>
+	</xs:complexType>
+	<xs:element name="Cell" type="Cell"/>
+	<xs:complexType name="Ellipse">
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="Ellipse" type="Ellipse"/>
+	<xs:complexType name="Rectangle">
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="HorizontalScale"/>
+		<xs:attribute name="VerticalScale"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="Rectangle" type="Rectangle"/>
+	<xs:complexType name="Line">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="LinePoint"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="Closed"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="Line" type="Line"/>
+	<xs:complexType name="Path">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="LinePoint"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="Closed"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="Path" type="Path"/>
+	<xs:complexType name="Polygon">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="LinePoint"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Stroke"/>
+		<xs:attribute name="StrokeThickness"/>
+		<xs:attribute name="StrokeType"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Opacity"/>
+		<xs:attribute name="Transparency"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="CornerRadius"/>
+		<xs:attribute name="CornerType"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="SitecoreFieldname"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="RunScript"/>
+		<xs:attribute name="FillTint"/>
+		<xs:attribute name="StrokeTint"/>
+		<xs:attribute name="Closed"/>
+		<xs:attribute name="WMode"/>
+		<xs:attribute name="WOffset"/>
+		<xs:attribute name="WInvert"/>
+		<xs:attribute name="WSide"/>
+		<xs:attribute name="LCap"/>
+		<xs:attribute name="JType"/>
+		<xs:attribute name="MLim"/>
+		<xs:attribute name="SAlign"/>
+		<xs:attribute name="LStart"/>
+		<xs:attribute name="LEnd"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="Polygon" type="Polygon"/>
+	<xs:complexType name="LinePoint">
+		<xs:attribute name="PointType" use="required"/>
+		<xs:attribute name="AnchorPointX"/>
+		<xs:attribute name="AnchorPointY"/>
+		<xs:attribute name="LeftDirPointX" use="required"/>
+		<xs:attribute name="LeftDirPointY" use="required"/>
+		<xs:attribute name="RightDirPointX"/>
+		<xs:attribute name="RightDirPointY"/>
+	</xs:complexType>
+	<xs:element name="LinePoint" type="LinePoint"/>
+	<xs:complexType name="StickyNote">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ParagraphStyle"/>
+		</xs:sequence>
+		<xs:attribute name="Width" use="required"/>
+		<xs:attribute name="Height" use="required"/>
+		<xs:attribute name="X" use="required"/>
+		<xs:attribute name="Y" use="required"/>
+		<xs:attribute name="Z-Index" use="required"/>
+		<xs:attribute name="Background"/>
+		<xs:attribute name="LayerName" use="required"/>
+		<xs:attribute name="Rotation"/>
+		<xs:attribute name="Name"/>
+		<xs:attribute name="SitecoreID"/>
+		<xs:attribute name="ObjectStyle"/>
+		<xs:attribute name="GroupID"/>
+		<xs:attribute name="HLink"/>
+		<xs:attribute name="HLLinkTo"/>
+		<xs:attribute name="Animation"/>
+		<xs:attribute name="Duration"/>
+		<xs:attribute name="HideA"/>
+		<xs:attribute name="HideI"/>
+		<xs:attribute name="NPlays"/>
+		<xs:attribute name="OpKeyFr"/>
+		<xs:attribute name="Loop"/>
+		<xs:attribute name="XKeyFr"/>
+		<xs:attribute name="YKeyFr"/>
+		<xs:attribute name="Speed"/>
+		<xs:attribute name="Animate"/>
+		<xs:attribute name="Events"/>
+		<xs:attribute name="AniPath"/>
+	</xs:complexType>
+	<xs:element name="StickyNote" type="StickyNote"/>
+	<xs:complexType name="Format" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="SpecialCharacter"/>
+			<xs:element ref="Inline"/>
+			<xs:element ref="InsertVar"/>
+			<xs:element ref="Table"/>
+		</xs:choice>
+		<xs:attribute name="Bold"/>
+		<xs:attribute name="Italic"/>
+		<xs:attribute name="Underline"/>
+		<xs:attribute name="SuperScript"/>
+		<xs:attribute name="SubScript"/>
+		<xs:attribute name="Track"/>
+		<xs:attribute name="LSpacing"/>
+		<xs:attribute name="Skew"/>
+		<xs:attribute name="BLShift"/>
+		<xs:attribute name="Leading"/>
+		<xs:attribute name="HScale"/>
+		<xs:attribute name="VScale"/>
+		<xs:attribute name="Strike"/>
+		<xs:attribute name="Font"/>
+		<xs:attribute name="FontSize"/>
+		<xs:attribute name="SCaps"/>
+		<xs:attribute name="ACaps"/>
+	</xs:complexType>
+	<xs:element name="Format" type="Format"/>
+	<xs:complexType name="Data" mixed="true"/>
+	<xs:element name="Data" type="Data"/>
+</xs:schema>

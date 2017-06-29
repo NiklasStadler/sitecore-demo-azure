@@ -1,0 +1,20 @@
+﻿@using Sitecore.Forms.Mvc.ViewModels.Fields
+@using Sitecore.WFFM.Abstractions.Data.Enums
+@using Sitecore.Forms.Mvc.Html
+@model CheckboxListField
+
+@using (Html.BeginField())
+{
+    var notInline = Model.FormType != FormType.Inline;
+    foreach (var item in Model.Items)
+    {
+        using (Html.BeginTag("div", () => notInline, new { @class = "checkbox" }))
+        {
+            using (Html.BeginTag("label", new { @class = notInline ?  string.Empty : "checkbox-inline"  }))
+            {
+                <input type="checkbox" value="@item.Value" id="@Html.IdFor(x => Model.Value)" name="@Html.NameFor(x => Model.Value)" @(item.Selected? "checked" : string.Empty)/>
+                @Html.DisplayFor(m => item.Text)
+            }
+        }
+    }   
+}
